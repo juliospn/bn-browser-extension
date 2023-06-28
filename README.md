@@ -1,4 +1,4 @@
-<h1>Bitcoin Indicator Alert<h1>
+<h1>Bitcoin News Browser Extension<h1>
 
 #### Status: Developing ⚠️
 
@@ -6,13 +6,10 @@
 	<img width=600px src="./assets/extension.gif">
 </div><br>
 
-#### This is a browser extension that allows users to monitor some important Bitcoin indicators and receive alerts for overbought and oversold conditions.
+#### This extension provides real-time information on Bitcoin price, days remaining until the halving event, and NUPL (Net Unrealized Profit/Loss). It also includes recent news posts on topics such as Wall Street's interest in Bitcoin ETF filing, the safety of nuclear energy, and the viability of Bitcoin mining in oil and gas well sites.
 
 ## Features
-+ Monitor Binance's funding rate indicator and NUPL
-+ Receive alerts for overbought and oversold conditions
-+ Monitor your average price on Bitcoin purchases
-+ Learn about the long-term DCA Counterflow strategy for Bitcoin 
++ 
 
 ## Installation
 To install the extension, follow these steps:
@@ -22,10 +19,10 @@ To install the extension, follow these steps:
 4. Click on the "Load unpacked" button and select the extension folder
 
 ## How to Use
-Once the extension is installed, you can click on the icon in the upper right corner of the browser to open the popup. From there, you can monitor the funding rate indicator and NUPL, then log your Bitcoin purchases to monitor the DCA Counterflow strategy's average price and progress. it will also be possible to set alarms for when indicators reach extreme values, signaling overbought and oversold regions.
+
 
 ## Contributing
-Contributions to this project are welcome! If you find a bug or have a feature request, please open an issue. If you would like to contribute code, please fork the repository and create a pull request.
+
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
