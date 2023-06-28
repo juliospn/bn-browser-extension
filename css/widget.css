@@ -1,0 +1,83 @@
+
+.flex-container {
+    display: flex;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: 5px 14px 13px 14px;
+    padding: 10px 13px;
+    border-radius: 5px;
+    text-align: left;
+    border: solid 1px rgba(207, 207, 207, 0.822);
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
+}
+
+.nupl {
+    border-radius: 10px;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.nupl h2 {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+#nupl-value {
+    width: 33px;
+    color: black;
+    font-weight: 700;
+    padding: 6px;
+
+}
+
+.nupl-inline {
+    display: inline-flex;
+}
+
+.price-ticker {
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    grid-column: span 1;
+    grid-row: span 1;
+    width: 84px;
+}
+
+.price {
+    font-weight: 500;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.funding {
+    font-weight: 700;
+    border-radius: 10px;
+    background-color: #fdfdfd;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+#nupl-value,
+#global-funding-rate,
+#price {
+    padding: 6px 6px 6px 0px;
+    max-width: 150px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.funding h2 {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.verticalLine {
+    border-left: 1px solid #636d7c;
+    height: 40px;
+    padding: 0!important;
+}

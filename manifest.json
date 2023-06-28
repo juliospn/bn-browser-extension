@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "BitcoinNews",
+  "version": "1.1.3",
+  "description": "This is a browser extension that allows users to monitor and access the latest news from BitcoinNews, along with some Bitcoin metrics.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "https://server-proxy-bitcoinnews-juliospn.vercel.app/feed",
+    "tabs"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "script-src": ["https://server-proxy-bitcoinnews-juliospn.vercel.app/feed"]
+  },  
+  "action": {
+    "default_icon": "icon128.png",
+    "default_title": "Bitcoin News - Insights, Opinions And Reports Straight From The Source",
+    "default_popup": "popup.html"
+  }
+}
