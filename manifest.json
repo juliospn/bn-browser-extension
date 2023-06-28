@@ -14,7 +14,10 @@
   ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'",
-    "script-src": ["https://server-proxy-bitcoinnews-juliospn.vercel.app/feed"]
+    "script-src": [
+      "https://server-proxy-bitcoinnews-juliospn.vercel.app/feed",
+      "https://code.jquery.com"
+    ]
   },  
   "action": {
     "default_icon": "icon128.png",

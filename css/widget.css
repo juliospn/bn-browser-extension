@@ -6,7 +6,7 @@
     justify-content: space-between;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    margin: 5px 14px 13px 14px;
+    margin: 5px 40px 13px 14px;
     padding: 10px 13px;
     border-radius: 5px;
     text-align: left;
@@ -43,7 +43,6 @@
     background-color: #fdfdfd;
     grid-column: span 1;
     grid-row: span 1;
-    width: 84px;
 }
 
 .price {
@@ -52,7 +51,7 @@
     font-weight: 700;
 }
 
-.funding {
+.middle-ticker {
     font-weight: 700;
     border-radius: 10px;
     background-color: #fdfdfd;
@@ -61,7 +60,7 @@
 }
 
 #nupl-value,
-#global-funding-rate,
+#halving-time,
 #price {
     padding: 6px 6px 6px 0px;
     max-width: 150px;
@@ -71,7 +70,7 @@
     font-size: 15px;
 }
 
-.funding h2 {
+.middle-ticker h2 {
     font-size: 10px;
     font-weight: 700;
 }

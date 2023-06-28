@@ -24,14 +24,14 @@ body {
 
 .twitter-icon {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 71px;
   }
 
   .social-icons {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    left: 250px;
   }
   
   .social-icons svg {
@@ -149,23 +149,24 @@ h1 {
 /* Estilo para a barra de rolagem =============== */
 
 ::-webkit-scrollbar {
-    width: 14px;
+    width: 15px;
     /* Largura da barra de rolagem */
 }
 
 /* Estilo para o track (trilha) da barra de rolagem */
 ::-webkit-scrollbar-track {
-    background: linear-gradient(to bottom, #ff4f19, #ff7300b7, #fdfdfd);
+    background: white;
     /* Cor de fundo do track */
-    border-left: solid 0.5px rgb(228, 228, 228);
+    border-left: solid 0.5px #ff1616c9;
+    border-right: solid 0.5px #ff1616cc;
 }
 
 /* Estilo para o thumb (ponteiro) da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #ff5d357c, #ff950062, #ffffff33);
+    background: rgb(241, 241, 241);
     /* Cor do thumb */
     border-left: solid 0.5px rgb(228, 228, 228);
-    border-right: solid 1px rgb(180, 180, 180);
+    border-right: solid 2px rgb(180, 180, 180);
     border-bottom: solid 2px rgba(180, 180, 180, 0.863);
-    border-top: solid 1px rgb(255, 255, 255);
+    border-top: solid 2px rgba(180, 180, 180, 0.863);
 }
