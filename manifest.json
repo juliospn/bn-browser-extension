@@ -9,15 +9,11 @@
     "128": "icon128.png"
   },
   "permissions": [
-    "https://server-proxy-bitcoinnews-juliospn.vercel.app/feed",
-    "tabs"
+    "https://bitcoinnews.com/feed/gn"
   ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'",
-    "script-src": [
-      "https://server-proxy-bitcoinnews-juliospn.vercel.app/feed",
-      "https://code.jquery.com"
-    ]
+    "script-src": ["https://bitcoinnews.com/feed/gn"]
   },  
   "action": {
     "default_icon": "icon128.png",
