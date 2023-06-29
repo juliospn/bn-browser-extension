@@ -155,7 +155,7 @@ h1 {
 
 /* Estilo para o track (trilha) da barra de rolagem */
 ::-webkit-scrollbar-track {
-    background: white;
+    background: rgb(250, 250, 250);
     /* Cor de fundo do track */
     border-left: solid 0.5px #ff1616c9;
     border-right: solid 0.5px #ff1616cc;
@@ -163,7 +163,7 @@ h1 {
 
 /* Estilo para o thumb (ponteiro) da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-    background: rgb(241, 241, 241);
+    background: white;
     /* Cor do thumb */
     border-left: solid 0.5px rgb(228, 228, 228);
     border-right: solid 2px rgb(180, 180, 180);
