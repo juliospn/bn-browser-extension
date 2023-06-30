@@ -11,7 +11,7 @@
 
 <body>
 
-  <!-- Dados sobre o Bitcoin  -->
+  <!-- Bitcoin data widget  -->
 
   <div class="container">
     <div class="header"><a href="https://bitcoinnews.com?source=browser-extension" target="_blank"><img
@@ -39,8 +39,7 @@
     <div class="social-icons">
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-youtube"
         viewBox="0 0 16 16" id="IconChangeColor">
-        <title>Youtube</title><a href="https://www.youtube.com/c/BitcoinNewsCom" 
-          rel="noopener noreferrer">
+        <title>Youtube</title><a href="https://www.youtube.com/c/BitcoinNewsCom" rel="noopener noreferrer">
           <path
             d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
             id="mainIconPathAttribute" stroke-width="0" stroke="#ff0000" fill="#ff0000">
@@ -49,38 +48,75 @@
 
     </div>
 
-
     <div class="flex-container">
-      <div class="price-ticker">
-        <h2 class="price">Bitcoin Price (USD):</h2>
-        <div id="price">---</div>
+      <div class="metric-container bitcoin-price">
+        <h2 class="metric-title">Bitcoin Price (USD):</h2>
+        <div class="metric-value" id="price">---</div>
       </div>
       <div class="verticalLine"></div>
-      <div class="middle-ticker">
-        <h2>Days to halving:</h2>
-        <div id="halving-time">---</div>
+      <div class="metric-container halving-time">
+        <h2 class="metric-title">Days to Halving:</h2>
+        <div class="metric-value" id="halving-time">---</div>
       </div>
       <div class="verticalLine"></div>
-      <div class="nupl">
-        <h2>NUPL:</h2>
-        <div class="nupl-inline">
-          <div id="nupl-value">---</div>
-        </div>
+      <div class="metric-container nupl">
+        <h2 class="metric-title">NUPL:</h2>
+        <div class="metric-value" id="nupl-value">---</div>
       </div>
-
-      <!-- Chamada para o grupo no Telegram  -->
-
+      <div class="verticalLine"></div>
+      <div class="metric-container price-change-24" style="display: none;">
+        <h2 class="metric-title">24%:</h2>
+        <div class="metric-value" id="price-change-24-value">---</div>
+      </div>
+      <div class="verticalLine"></div>
+      <div class="metric-container price-change-7d" style="display: none;">
+        <h2 class="metric-title">7d %:</h2>
+        <div class="metric-value" id="price-change-7d-value">---</div>
+      </div>
+      <div class="metric-container nodes" style="display: none;">
+        <h2 class="metric-title"># Nodes:</h2>
+        <div class="metric-value" id="nodes-value">---</div>
+      </div>
+      <div class="verticalLine"></div>
+      <div class="metric-container lightning-channels" style="display: none;">
+        <h2 class="metric-title"># Channels:</h2>
+        <div class="metric-value" id="lightning-channels-value">---</div>
+      </div>
+      <div class="verticalLine"></div>
+      <div class="metric-container network-capacity" style="display: none;">
+        <h2 class="metric-title">Network capacity:</h2>
+        <div class="metric-value" id="network-capacity-value">---</div>
+      </div>
     </div>
-    <a href="https://t.me/bitcoinnewschat" target="_blank" rel="noreferrer" style="text-decoration: none;">
-      <p class="mailingList"><img
-          src="https://cdn0.iconfinder.com/data/icons/font-awesome-brands-vol-2/512/telegram-plane-512.png"
-          alt="email newsletter" style="width: 20px; margin-right: 5px; vertical-align: middle;"> Join our community on
-        Telegram<span class="subscribeList">Let's go! →</span></p>
+    
+
+      <button id="change-metrics-btn" class="arrow-button">Lightning</button>
+  
+
+    <!-- Call to the group on Telegram -->
+    <a href="https://t.me/bitcoinnewschat" target="_blank" rel="noreferrer"
+      style="text-decoration: none; margin: 0 auto;">
+      <p class="mailingList"> <svg height="16px" width="16px" version="1.1" id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 435.00 435.00"
+          xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="5.22">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+            stroke-width="5.22"></g>
+          <g id="SVGRepo_iconCarrier">
+            <g>
+              <polygon style="fill:#46F8FF;" points="256.2,217.405 256.38,217.405 435,380.27 435,54.73 "></polygon>
+              <polygon style="fill:#9BFBFF;" points="435,54.73 0,54.73 217.5,252.5 "></polygon>
+              <polygon style="fill:#00E7F0;"
+                points="256.2,217.405 217.5,252.5 178.71,217.405 0,380.27 435,380.27 256.38,217.405 "></polygon>
+              <polygon style="fill:#46F8FF;" points="0,54.73 0,380.27 178.71,217.405 "></polygon>
+            </g>
+          </g>
+        </svg> Subscribe to our Newsletter</p>
     </a>
 
 
     <div class="posts" id="feed-content">
-      <!-- Dados do feed RSS serão preenchidos aqui -->
+      <!-- Data from the RSS feed will be filled in here -->
     </div>
 
     <div class="loadMore">
@@ -90,10 +126,11 @@
 
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/nupl.js"></script>
-  <script src="./js/indicadores.js"></script>
+  <script src="./js/metrics.js"></script>
   <script src="./js/popup.js"></script>
   <script src="./js/backend.js"></script>
   <script src="./js/halving.js"></script>
+  <script src="./js/metrics-widget.js"></script>
   <script src="./js/language.js"></script>
 
 </body>

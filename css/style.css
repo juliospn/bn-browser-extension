@@ -26,34 +26,42 @@ body {
     position: absolute;
     top: 20px;
     left: 71px;
-  }
+}
 
-  .social-icons {
+.social-icons {
     position: absolute;
     top: 20px;
     left: 250px;
-  }
-  
-  .social-icons svg {
+}
+
+.social-icons svg {
     margin-left: 3px;
     width: 20px;
     height: 20px;
-  }  
+}
 
 /* News page =================================== */
 .mailingList {
     background: #ff1616;
     color: #ffffff !important;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     padding: 10px;
     text-align: left;
     transition: all 0.3s;
     vertical-align: middle;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.mailingList:hover {
-    color: #000000 !important;
+.mailingList p:hover {
+    transition: all 1s;
+}
+
+.mailingList a {
+    display: inline;
 }
 
 .subscribeList {
@@ -65,8 +73,8 @@ body {
     float: right;
 }
 
-.mailingList img {
-    padding-top: 1px;
+.mailingList svg {
+    padding-right: 3px;
 }
 
 .single-post {
@@ -111,8 +119,13 @@ body {
     padding: 0 0 15px;
 }
 
+.loadMore:hover {
+    font-weight: 100;
+    transition: all 1s;
+}
+
 .loadMore button {
-    background:  #ff1616;
+    background: #ff1616;
     border: 0;
     color: #fff;
     cursor: pointer;
