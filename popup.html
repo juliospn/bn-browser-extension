@@ -56,7 +56,9 @@
       <div class="verticalLine"></div>
       <div class="metric-container halving-time">
         <h2 class="metric-title">Days to Halving:</h2>
-        <div class="metric-value" id="halving-time">---</div>
+        <div class="metric-value" id="halving-time">
+          <span class="value">---</span> <span class="unit">days</span>
+        </div>
       </div>
       <div class="verticalLine"></div>
       <div class="metric-container nupl">
@@ -65,7 +67,7 @@
       </div>
       <div class="verticalLine"></div>
       <div class="metric-container price-change-24" style="display: none;">
-        <h2 class="metric-title">24%:</h2>
+        <h2 class="metric-title">24h %:</h2>
         <div class="metric-value" id="price-change-24-value">---</div>
       </div>
       <div class="verticalLine"></div>
@@ -87,10 +89,11 @@
         <h2 class="metric-title">Network capacity:</h2>
         <div class="metric-value" id="network-capacity-value">---</div>
       </div>
+      <button id="change-metrics-btn" class="arrow-button">Lightning</button>
     </div>
     
 
-      <button id="change-metrics-btn" class="arrow-button">Lightning</button>
+     
   
 
     <!-- Call to the group on Telegram -->
