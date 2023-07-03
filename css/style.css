@@ -20,22 +20,22 @@ body {
 .header a {
     display: inline-block;
     width: fit-content;
-  }
-  
-  .header a img {
+}
+
+.header a img {
     pointer-events: none;
     height: auto;
-  }
-  
+}
+
 
 .header img {
-    width: 135px;
+    width: 150px;
     padding-top: 5px;
 }
 
 .twitter-icon {
     position: absolute;
-    top: 20px;
+    top: 25px;
     left: 71px;
 }
 
@@ -45,8 +45,8 @@ body {
 
 .social-icons {
     position: absolute;
-    top: 20px;
-    left: 250px;
+    top: 25px;
+    left: 245px;
 }
 
 .social-icons svg {
