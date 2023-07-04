@@ -24,18 +24,26 @@ function getPriceChange() {
   var url = "https://api.coincap.io/v2/assets/bitcoin";
 
   fetch(url)
-    .then(function (response) {
+    .then(function(response) {
       return response.json();
     })
-    .then(function (data) {
+    .then(function(data) {
       let changePercent24Hr = parseFloat(data.data.changePercent24Hr);
       let priceChange24Value = document.getElementById("price-change-24-value");
-      priceChange24Value.textContent = `${changePercent24Hr.toFixed(2)}%`;
+
+      priceChange24Value.innerHTML = `${changePercent24Hr.toFixed(2)}<span class="unit">%</span>`;
       priceChange24Value.style.display = "block";
+
+      if (changePercent24Hr > 0) {
+        priceChange24Value.style.color = "green";
+      } else if (changePercent24Hr < 0) {
+        priceChange24Value.style.color = "darkred";
+      }
     });
 }
 
 getPriceChange();
+
 
 
 function formatNetworkCapacity(networkCapacity) {
@@ -72,15 +80,14 @@ function getLightningMetrics() {
       lightningChannelsValue.style.display = "block";
 
       const formattedNetworkCapacity = formatNetworkCapacity(data.networkcapacity);
-      const [value, unit] = formattedNetworkCapacity.split(" "); 
-      networkCapacityValue.innerHTML = `<span class="value">${value}</span> <span class="unit">${unit}</span>`;
+      const [value, unit] = formattedNetworkCapacity.split(" ");
+      const intValue = parseInt(value.replace(/,/g, ""));
+      networkCapacityValue.innerHTML = `<span class="value">${intValue.toLocaleString()}</span> <span class="unit">${unit}</span>`;
       networkCapacityValue.style.display = "block";
     });
 }
 
 getLightningMetrics();
-
-
 
 function getWeekPriceChange() {
   var url = "https://api.coinranking.com/v2/coin/Qwsogvtv82FCd?timePeriod=7d";
@@ -95,8 +102,14 @@ function getWeekPriceChange() {
         let priceChange7dValue = document.getElementById("price-change-7d-value");
 
         if (!isNaN(priceChange7d)) {
-          priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
+          priceChange7dValue.innerHTML = `${priceChange7d.toFixed(2)}<span class="unit">%</span>`;
           priceChange7dValue.style.display = "block";
+
+          if (priceChange7d > 0) {
+            priceChange7dValue.style.color = "green";
+          } else if (priceChange7d < 0) {
+            priceChange7dValue.style.color = "darkred";
+          }
         } else {
           priceChange7dValue.textContent = "N/A";
           priceChange7dValue.style.display = "block";
@@ -111,6 +124,8 @@ function getWeekPriceChange() {
 }
 
 getWeekPriceChange();
+
+
 
 
 

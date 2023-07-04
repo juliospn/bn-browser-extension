@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
   
     const newMetrics = [
-      ".bitcoin-price",
       ".price-change-24",
       ".price-change-7d",
+      ".nupl",
     ];
   
     const newMetrics2 = [

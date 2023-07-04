@@ -12,7 +12,7 @@ function startClock(height) {
   if (yearsUntilHalving > 0) {
     halvingTimeText += yearsUntilHalving + " years, ";
   }
-  halvingTimeText += remainingDays + " <span class=\"unit\">days</span>";
+  halvingTimeText += remainingDays + " <span class=\"unit\">Days</span>";
 
   document.getElementById('halving-time').innerHTML = halvingTimeText;
 }

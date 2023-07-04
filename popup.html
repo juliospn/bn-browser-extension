@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <!-- Bitcoin data widget  -->
 
   <div class="container">
@@ -49,9 +48,11 @@
     </div>
 
     <div>
+      <button id="change-metrics-btn" class="arrow-button"><img src="./media/1-removebg-preview.png"></button>
       <div class="flex-container">
+        
         <div class="metric-container bitcoin-price">
-          <h2 class="metric-title">Bitcoin Price:</h2>
+          <h2 class="metric-title">BTC Price:</h2>
           <div class="metric-value" id="price">---</div>
         </div>
         <div class="verticalLine"></div>
@@ -62,11 +63,6 @@
           </div>
         </div>
         <div class="verticalLine"></div>
-        <div class="metric-container nupl">
-          <h2 class="metric-title">NUPL:</h2>
-          <div class="metric-value" id="nupl-value">---</div>
-        </div>
-        <div class="verticalLine"></div>
         <div class="metric-container price-change-24" style="display: none;">
           <h2 class="metric-title">24h Change:</h2>
           <div class="metric-value" id="price-change-24-value">---</div>
@@ -75,6 +71,11 @@
         <div class="metric-container price-change-7d" style="display: none;">
           <h2 class="metric-title">7d Change:</h2>
           <div class="metric-value" id="price-change-7d-value">---</div>
+        </div>
+        <div class="verticalLine"></div>
+        <div class="metric-container nupl">
+          <h2 class="metric-title">NUPL:</h2>
+          <div class="metric-value" id="nupl-value">---</div>
         </div>
         <div class="metric-container network-capacity" style="display: none;">
           <h2 class="metric-title">Network Capacity:</h2>
@@ -90,24 +91,20 @@
           <h2 class="metric-title"># Channels:</h2>
           <div class="metric-value" id="lightning-channels-value">---</div>
         </div>
-
-        <button id="change-metrics-btn" class="arrow-button"><img src="./media/1-removebg-preview.png"></button>
       </div>
 
       <!-- Call to the group on Telegram -->
-      <div style="width:94%;margin: 25px auto 10px;">
-        <a href="https://bitcoinnews.com/newsletter?source=browser-extension" target="_blank" rel="noreferrer"
-          style="text-decoration: none; margin: 0 auto;">
-          <p class="mailingList"> Subscribe to our Newsletter <img src="./media/mail.png" class="mail-img">
+      <div style="width: 94%; margin: 0 auto 12px;">
+        <a href="https://bitcoinnews.com/newsletter?source=browser-extension" target="_blank" rel="noreferrer" style="text-decoration: none; margin: 0 auto; cursor:auto">
+          <p class="mailingList">
+            <span style="cursor: pointer;">Get Free Sats by Subscribing</span> <img src="./media/mail.png" class="mail-img">
           </p>
         </a>
       </div>
-
-
+                
       <div id="feed-content">
         <!-- Data from the RSS feed will be filled in here -->
       </div>
-
       <div class="loadMore">
         <button>Load More</button>
       </div>
