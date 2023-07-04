@@ -1,80 +1,68 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const initialMetrics = [
-      ".bitcoin-price",
-      ".halving-time",
-      ".nupl",
-    ];
-  
-    const newMetrics = [
-      ".price-change-24",
-      ".price-change-7d",
-      ".nupl",
-    ];
-  
-    const newMetrics2 = [
-      ".nodes",
-      ".lightning-channels",
-      ".network-capacity",
-    ];
-  
-    let currentMetrics = initialMetrics;
-  
-    function changeMetrics() {
-      const metricsToShow = currentMetrics === initialMetrics
-        ? newMetrics
-        : currentMetrics === newMetrics
-        ? newMetrics2
-        : initialMetrics;
-  
-      for (const metric of currentMetrics) {
-        document.querySelector(metric).style.display = "none";
-      }
-  
-      for (const metric of metricsToShow) {
-        document.querySelector(metric).style.display = "flex";
-      }
-  
-      currentMetrics = metricsToShow;
+  const verticalLines = Array.from(document.getElementsByClassName("verticalLine"));
+
+  const initialMetrics = [
+    ".bitcoin-price",
+    ".halving-time",
+    ".nupl",
+  ];
+
+  const newMetrics = [
+    ".price-change-24",
+    ".price-change-7d",
+    ".nupl",
+  ];
+
+  const newMetrics2 = [
+    ".nodes",
+    ".lightning-channels",
+    ".network-capacity",
+  ];
+
+  let currentMetrics = initialMetrics;
+
+  function showMetrics(metricsToShow) {
+    for (const metric of currentMetrics) {
+      document.querySelector(metric).style.display = "none";
     }
-  
-    const changeMetricsBtn = document.getElementById("change-metrics-btn");
-    changeMetricsBtn.addEventListener("click", changeMetrics);
-  });
-  
 
-// Obtém referências para os elementos HTML
-const verticalLines = Array.from(document.getElementsByClassName("verticalLine"));
-const changeMetricsBtn = document.getElementById("change-metrics-btn");
+    for (const metric of metricsToShow) {
+      document.querySelector(metric).style.display = "flex";
+    }
 
-let clickCount = 0;
-
-// Configura a visibilidade inicial das vertical lines
-verticalLines.slice(2).forEach(line => line.style.display = "none");
-
-// Função para trocar a visibilidade das vertical lines
-function toggleVerticalLines() {
-  // Incrementa a contagem de cliques
-  clickCount++;
-
-  // Obtém as vertical lines visíveis no momento
-  const visibleLines = verticalLines.filter(line => line.style.display !== "none");
-
-  // Torna as duas primeiras vertical lines invisíveis
-  visibleLines.slice(0, 2).forEach(line => line.style.display = "none");
-
-  if (clickCount >= 3) {
-    // Reinicia o contador após 3 cliques e exibe as duas primeiras vertical lines
-    clickCount = 0;
-    verticalLines.slice(2).forEach(line => line.style.display = "none");
-    verticalLines.slice(0, 2).forEach(line => line.style.display = "block");
-  } else {
-    // Obtém as próximas duas vertical lines que devem ser visíveis
-    const nextVisibleLines = verticalLines.slice(verticalLines.indexOf(visibleLines[1]) + 1, verticalLines.indexOf(visibleLines[1]) + 3);
-
-    // Torna as próximas duas vertical lines visíveis
-    nextVisibleLines.forEach(line => line.style.display = "block");
+    currentMetrics = metricsToShow;
   }
-}
 
-// Adiciona o evento de clique ao botão "Change metrics"
-changeMetricsBtn.addEventListener("click", toggleVerticalLines);
+  function changeToBitcoinMetrics() {
+    showMetrics(initialMetrics);
+    verticalLines.forEach(line => line.style.display = "none");
+    verticalLines.slice(0, 2).forEach(line => line.style.display = "block");
+  }
+
+  function changeToCandleMetrics() {
+    showMetrics(newMetrics);
+    verticalLines.forEach(line => line.style.display = "none");
+    verticalLines.slice(2, 4).forEach(line => line.style.display = "block");
+  }
+
+  function changeToLightningMetrics() {
+    showMetrics(newMetrics2);
+    verticalLines.forEach(line => line.style.display = "none");
+    verticalLines.slice(4).forEach(line => line.style.display = "block");
+  }
+
+  const changeMetricsBtn = document.getElementById("change-metrics-btn");
+  const changeMetricsBTCBtn = document.getElementById("change-metrics-btc");
+  const changeMetricsCandleBtn = document.getElementById("change-metrics-candle");
+  const changeMetricsLightningBtn = document.getElementById("change-metrics-lightning");
+
+  changeMetricsBTCBtn.addEventListener("click", changeToBitcoinMetrics);
+  changeMetricsCandleBtn.addEventListener("click", changeToCandleMetrics);
+  changeMetricsLightningBtn.addEventListener("click", changeToLightningMetrics);
+
+  // Ocultar todas as vertical lines inicialmente
+  verticalLines.forEach(line => line.style.display = "none");
+
+  // Exibir as duas vertical lines relevantes para o botão change-metrics-btc
+  verticalLines.slice(0, 2).forEach(line => line.style.display = "block");
+});

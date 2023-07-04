@@ -4,6 +4,10 @@ body {
     font-family: system-ui;
 }
 
+.editable-svg path {
+    fill: red;
+  }  
+
 .container {
     width: 100%;
     justify-content: space-between;
@@ -186,8 +190,12 @@ h1 {
 
 .mailingList:hover .mail-img {
     transform: translateX(10px);
-  }
-  
+}
+
+#loading-spinner {
+    display: none;
+}
+
 /* Estilo para a barra de rolagem =============== */
 
 ::-webkit-scrollbar {

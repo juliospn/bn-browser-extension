@@ -21,18 +21,6 @@
   flex-direction: column;
 }
 
-.metric-container:nth-child(3n + 1) {
-  grid-column: span 1;
-}
-
-.metric-container:nth-child(3n + 2) {
-  grid-column: span 1;
-}
-
-.metric-container:nth-child(3n + 3) {
-  grid-column: span 1;
-}
-
 .metric-title {
   font-size: 12px;
   font-weight: 700;
@@ -61,27 +49,29 @@
   cursor: pointer;
   position:absolute;
   left: 23px;
-  top: 50px;
-  width:85px
+  top: 60px;
 }
 
 .arrow-button img {
-  height: 50px;  
+  height: 32px;  
+  transition: all 0.2s;
+}
+
+.arrow-button svg {
+  background-color: white;
   transition: all 0.2s;
 }
 
 .arrow-button img:hover {
-  transform: scale(1.05);
+  transform: scale(1.09);
+}
+
+.arrow-button svg:hover {
+  transform: scale(1.09);
 }
 
 .nupl {
   flex-direction: column;
-}
-
-#change-metrics-btn {
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  font-size: 10px;
 }
 
 .unit {

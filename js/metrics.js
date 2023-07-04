@@ -31,19 +31,25 @@ function getPriceChange() {
       let changePercent24Hr = parseFloat(data.data.changePercent24Hr);
       let priceChange24Value = document.getElementById("price-change-24-value");
 
-      priceChange24Value.innerHTML = `${changePercent24Hr.toFixed(2)}<span class="unit">%</span>`;
-      priceChange24Value.style.display = "block";
-
-      if (changePercent24Hr > 0) {
-        priceChange24Value.style.color = "green";
-      } else if (changePercent24Hr < 0) {
-        priceChange24Value.style.color = "darkred";
+      if (!isNaN(changePercent24Hr)) {
+        if (changePercent24Hr > 0) {
+          priceChange24Value.innerHTML = `<span class="arrow">&#8593;</span> ${changePercent24Hr.toFixed(2)}<span class="unit">%</span>`;
+          priceChange24Value.style.color = "green";
+        } else if (changePercent24Hr < 0) {
+          priceChange24Value.innerHTML = `<span class="arrow">&#8595;</span> ${changePercent24Hr.toFixed(2)}<span class="unit">%</span>`;
+          priceChange24Value.style.color = "#ff3554"; // Vermelho escuro
+        } else {
+          priceChange24Value.textContent = `${changePercent24Hr.toFixed(2)}%`;
+          priceChange24Value.style.color = "inherit";
+        }
+      } else {
+        priceChange24Value.textContent = "N/A";
+        priceChange24Value.style.display = "block";
       }
     });
 }
 
 getPriceChange();
-
 
 
 function formatNetworkCapacity(networkCapacity) {
@@ -102,14 +108,18 @@ function getWeekPriceChange() {
         let priceChange7dValue = document.getElementById("price-change-7d-value");
 
         if (!isNaN(priceChange7d)) {
-          priceChange7dValue.innerHTML = `${priceChange7d.toFixed(2)}<span class="unit">%</span>`;
-          priceChange7dValue.style.display = "block";
-
           if (priceChange7d > 0) {
+            priceChange7dValue.innerHTML = `<span class="arrow">&#8593;</span> ${priceChange7d.toFixed(2)}<span class="unit">%</span>`;
             priceChange7dValue.style.color = "green";
           } else if (priceChange7d < 0) {
-            priceChange7dValue.style.color = "darkred";
+            priceChange7dValue.innerHTML = `<span class="arrow">&#8595;</span> ${priceChange7d.toFixed(2)}<span class="unit">%</span>`;
+            priceChange7dValue.style.color = "red";
+          } else {
+            priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
+            priceChange7dValue.style.color = "inherit";
           }
+
+          priceChange7dValue.style.display = "block";
         } else {
           priceChange7dValue.textContent = "N/A";
           priceChange7dValue.style.display = "block";
@@ -124,6 +134,8 @@ function getWeekPriceChange() {
 }
 
 getWeekPriceChange();
+
+
 
 
 
