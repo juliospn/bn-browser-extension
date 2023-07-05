@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const initialMetrics = [
     ".bitcoin-price",
     ".halving-time",
-    ".nupl",
+    ".btc-dom",
   ];
 
   const newMetrics = [
     ".price-change-24",
     ".price-change-7d",
-    ".nupl",
+    ".nupl"
   ];
 
   const newMetrics2 = [
@@ -65,4 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Exibir as duas vertical lines relevantes para o botão change-metrics-btc
   verticalLines.slice(0, 2).forEach(line => line.style.display = "block");
+
+  // Ocultar o elemento correspondente à classe .nupl
+  document.querySelector(".nupl").style.display = "none";
 });

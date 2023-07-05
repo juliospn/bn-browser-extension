@@ -1,3 +1,5 @@
+
+/* ========= BTC Price Binance ========= */
 const wst = new WebSocket('wss://fstream.binance.com/ws/btcusdt@markPrice@1s');
 const priceDisplay = document.getElementById('price');
 
@@ -20,6 +22,7 @@ function formatPrice(price) {
   return '$ ' + formatted;
 }
 
+/* ========= 24hr Price Change ========= */
 function getPriceChange() {
   var url = "https://api.coincap.io/v2/assets/bitcoin";
 
@@ -67,6 +70,8 @@ function formatNetworkCapacity(networkCapacity) {
   return `${formattedValue} BTC`;
 }
 
+
+/* ========= Lightning Metrics ========= */
 function getLightningMetrics() {
   var url = "https://server-proxy-bitcoinnews-juliospn.vercel.app/lightning-metrics";
 
@@ -95,6 +100,8 @@ function getLightningMetrics() {
 
 getLightningMetrics();
 
+
+/* ========= Week Price Change ========= */
 function getWeekPriceChange() {
   var url = "https://api.coinranking.com/v2/coin/Qwsogvtv82FCd?timePeriod=7d";
 
@@ -135,6 +142,26 @@ function getWeekPriceChange() {
 
 getWeekPriceChange();
 
+
+/* ========= BTC DOM ========= */
+function getBitcoinDominance() {
+  var url = "https://api.coingecko.com/api/v3/global";
+
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      let bitcoinDominance = data.data.market_cap_percentage.btc.toFixed(2);
+      let btcDomValue = document.getElementById("btc-dom-value");
+      btcDomValue.innerHTML = `<span class="value">${bitcoinDominance}</span><span class="unit"> %<span>`;
+    })
+    .catch(function(error) {
+      console.error("Failed to fetch data:", error);
+    });
+}
+
+getBitcoinDominance();
 
 
 
