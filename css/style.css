@@ -66,6 +66,17 @@ body {
 /* News page =================================== */
 .subscribe-button {
     margin: 0 11px 12px;
+    transition: 0.5s all;
+}
+
+.subscribe-button a {
+    text-decoration: none; 
+    margin: 0 auto; 
+}
+
+.subscribe-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
+    border-radius: 5px;
 }
 
 .mailingList {
@@ -157,6 +168,7 @@ div p.mailingList {
 
 .loadMore button:hover {
     margin-top: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
 }
 
 .loadMore button {
