@@ -6,13 +6,16 @@ body {
 
 .editable-svg path {
     fill: red;
-  }  
+}
+
+.social-icons a:hover img {
+    filter: brightness(0) saturate(100%) hue-rotate(0deg) brightness(100%);
+}
 
 .container {
     width: 100%;
     justify-content: space-between;
     width: 340px;
-    height: 570px;
     background-color: white;
 }
 
@@ -34,14 +37,14 @@ body {
 
 
 .header img {
-    width: 150px;
+    width: 125px;
     padding-top: 5px;
 }
 
 .twitter-icon {
     position: absolute;
-    top: 25px;
-    left: 45px;
+    top: 21px;
+    left: 52px;
 }
 
 .twitter-icon:hover {
@@ -50,7 +53,7 @@ body {
 
 .social-icons {
     position: absolute;
-    top: 25px;
+    top: 22px;
     left: 274px;
 }
 
@@ -61,9 +64,13 @@ body {
 }
 
 /* News page =================================== */
+.subscribe-button {
+    margin: 0 11px 12px;
+}
+
 .mailingList {
-    background: #ff1616;
-    color: #ffffff;
+    background: #ff161600;
+    color: #000000;
     font-size: 16px;
     font-weight: 500;
     text-align: left;
@@ -72,9 +79,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 10px 8px;
     margin-bottom: 10px;
     transition: all 1s;
+    border-radius: 5px;
+    border: 2px solid black;
 }
 
 div p.mailingList {
@@ -159,6 +168,7 @@ div p.mailingList {
     padding: 10px 25px;
     font-size: 14px;
     transition: all 0.2s;
+    border-radius: 5px;
 }
 
 h1 {

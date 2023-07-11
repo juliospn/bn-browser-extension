@@ -11,7 +11,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
 }
 
-.button-container{
+.button-container {
   position: absolute;
   background-color: white;
   width: 84px;
@@ -19,8 +19,8 @@
   /* border: solid 1px rgba(207, 207, 207, 0.822); */
   border-bottom: none;
   border-radius: 5px 5px 0px 0px;
-  left: 20px;
-  top: 64px;
+  left: 25px;
+  top: 54px;
 }
 
 .metric-container {
@@ -51,7 +51,7 @@
 .verticalLine {
   border-left: 1px solid #636d7c;
   height: 40px;
-  padding-right:8px!important;
+  padding-right: 8px !important;
   margin-left: 8px;
 }
 
@@ -60,12 +60,12 @@
   color: rgb(255, 255, 255);
   border: none;
   cursor: pointer;
-  position:absolute;
+  position: absolute;
   padding: 6px 0 0 0;
 }
 
 .arrow-button img {
-  height: 32px;  
+  height: 32px;
   transition: all 0.2s;
 }
 
@@ -87,5 +87,6 @@
 }
 
 .unit {
-  font-size: 70%; /* Tamanho de fonte menor para a unidade "days" */
+  font-size: 70%;
+  /* Tamanho de fonte menor para a unidade "days" */
 }
