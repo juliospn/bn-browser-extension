@@ -1,11 +1,18 @@
 @font-face {
     font-family: 'Avant Garde Gothic';
-    src: url('https://server-proxy-bitcoinnews-juliospn.vercel.app/api/corporate-font/avant-garde-gothic') format('woff');
+    src: url('../fonts/itc-avant-garde-gothic_bold.woff') format('woff');
+}
+
+.posts-title h2 {
+    font-family: 'Avant Garde Gothic', sans-serif;
+    line-height: 1.3;
+    /* Ajuste o valor conforme necessário */
 }
 
 body {
     font-size: 14px;
     color: black;
+    font-family: system-ui;
 }
 
 .editable-svg path {
@@ -155,7 +162,6 @@ div p.mailingList {
 
 .posts-title h2 {
     margin-bottom: 5px;
-    font-family: 'Avant Garde Gothic', sans-serif;
 }
 
 .posts-title {
