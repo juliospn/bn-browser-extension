@@ -1,7 +1,11 @@
+@font-face {
+    font-family: 'Avant Garde Gothic';
+    src: url('https://server-proxy-bitcoinnews-juliospn.vercel.app/api/corporate-font/avant-garde-gothic') format('woff');
+}
+
 body {
     font-size: 14px;
     color: black;
-    font-family: system-ui;
 }
 
 .editable-svg path {
@@ -39,6 +43,7 @@ body {
 .header img {
     width: 125px;
     padding-top: 5px;
+    scale: 0.65;
 }
 
 .twitter-icon {
@@ -70,8 +75,8 @@ body {
 }
 
 .subscribe-button a {
-    text-decoration: none; 
-    margin: 0 auto; 
+    text-decoration: none;
+    margin: 0 auto;
 }
 
 .subscribe-button:hover {
@@ -150,6 +155,7 @@ div p.mailingList {
 
 .posts-title h2 {
     margin-bottom: 5px;
+    font-family: 'Avant Garde Gothic', sans-serif;
 }
 
 .posts-title {
