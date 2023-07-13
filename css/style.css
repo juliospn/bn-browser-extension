@@ -104,8 +104,8 @@ body {
     padding: 10px 8px;
     margin-bottom: 10px;
     transition: all 1s;
-    border-top: 0px solid black;
-    border-bottom: 0px solid black;
+    border-top: 1px solid rgba(143, 143, 143, 0.178);
+    border-bottom: 1px solid rgba(95, 95, 95, 0.171);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
 }
 
