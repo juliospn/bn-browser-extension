@@ -20,7 +20,7 @@
   border-bottom: none;
   border-radius: 5px 5px 0px 0px;
   left: 25px;
-  top: 54px;
+  top: 56px;
 }
 
 .metric-container {
@@ -89,4 +89,41 @@
 .unit {
   font-size: 70%;
   /* Tamanho de fonte menor para a unidade "days" */
+}
+
+.tool-tip {
+  position: absolute;
+  left: 85px;
+  top: 4px;
+  font-weight: 600;
+  color: rgb(94, 94, 94);
+}
+
+.tool-tip:hover {
+  cursor: help;
+}
+
+.tool-tip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.2s ease;
+  width: 151px;
+  border-radius: 5px;
+  text-align: center;
+  pointer-events: none;
+  border: 1px solid black;
+}
+
+.tool-tip:hover::before {
+  opacity: 1;
+  visibility: visible;
 }
