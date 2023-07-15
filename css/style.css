@@ -15,16 +15,11 @@ body {
     font-family: system-ui;
 }
 
-.editable-svg path {
-    fill: red;
-}
-
 .social-icons a:hover img {
     filter: brightness(0) saturate(100%) hue-rotate(0deg) brightness(100%);
 }
 
 .container {
-    width: 100%;
     justify-content: space-between;
     width: 340px;
     background-color: white;
@@ -33,7 +28,6 @@ body {
 .header {
     width: 100%;
     text-align: center;
-    padding-bottom: 12px;
 }
 
 .header a {
@@ -56,7 +50,7 @@ body {
 .twitter-icon {
     position: absolute;
     top: 21px;
-    left: 52px;
+    left: 58px;
 }
 
 .twitter-icon:hover {
@@ -66,7 +60,7 @@ body {
 .social-icons {
     position: absolute;
     top: 22px;
-    left: 274px;
+    left: 265px;
 }
 
 .social-icons svg {

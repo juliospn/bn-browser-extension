@@ -37,18 +37,30 @@ document.addEventListener("DOMContentLoaded", function () {
     showMetrics(initialMetrics);
     verticalLines.forEach(line => line.style.display = "none");
     verticalLines.slice(0, 2).forEach(line => line.style.display = "block");
+
+    changeMetricsBTCBtn.classList.add("active");
+    changeMetricsCandleBtn.classList.remove("active");
+    changeMetricsLightningBtn.classList.remove("active");
   }
 
   function changeToCandleMetrics() {
     showMetrics(newMetrics);
     verticalLines.forEach(line => line.style.display = "none");
     verticalLines.slice(2, 4).forEach(line => line.style.display = "block");
+
+    changeMetricsBTCBtn.classList.remove("active");
+    changeMetricsCandleBtn.classList.add("active");
+    changeMetricsLightningBtn.classList.remove("active");
   }
 
   function changeToLightningMetrics() {
     showMetrics(newMetrics2);
     verticalLines.forEach(line => line.style.display = "none");
     verticalLines.slice(4).forEach(line => line.style.display = "block");
+
+    changeMetricsBTCBtn.classList.remove("active");
+    changeMetricsCandleBtn.classList.remove("active");
+    changeMetricsLightningBtn.classList.add("active");
   }
 
   const changeMetricsBtn = document.getElementById("change-metrics-btn");
