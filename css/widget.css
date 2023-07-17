@@ -14,11 +14,11 @@
 .button-container {
   position: absolute;
   background-color: #5c5c5c;
-  width: 99px;
-  height: 35px;
+  width: 105.5px;
+  height: 36.3px;
   /* border: solid 1px rgba(207, 207, 207, 0.822); */
   border-radius: 17px 17px 17px 17px;
-  left: 121px;
+  left: 117px;
   top: 128px;
 }
 
@@ -63,10 +63,6 @@
   padding: 0;
 }
 
-.editable-svg path {
-  fill: rgb(153, 153, 153);
-}
-
 .arrow-button img {
   height: 32px;
   transition: all 0.2s;
@@ -86,14 +82,42 @@
   /* Tamanho de fonte menor para a unidade "days" */
 }
 
-.arrow-button.active svg path {
-  fill: white; /* Altera a cor interior do ícone para vermelho */
-}
-
-.arrow-button.active svg rect {
-  fill: #ff1616; /* Altera a cor interior do ícone para vermelho */
-}
-
 .arrow-button img {
-  height: 32px;
+  padding-top: 2.49px;
+  padding-left: 2.5px;
+  border-radius: 100px;
+}
+
+.image-inactive {
+  border-radius: 100px;
+}
+
+/* Defina a imagem ativa usando o atributo data-inactive */
+.btc-button.active {
+  content: url("../media/btc-active.png");
+}
+
+/* Defina a imagem inativa usando o atributo data-active */
+.btc-button.inactive {
+  content: url("../media/btc-inactive.png");
+}
+
+/* Defina a imagem ativa usando o atributo data-inactive */
+.market-button.active {
+  content: url("../media/arrow-active.png");
+}
+
+/* Defina a imagem inativa usando o atributo data-active */
+.market-button.inactive {
+  content: url("../media/arrow-inactive.png");
+}
+
+/* Defina a imagem ativa usando o atributo data-inactive */
+.lightning-button.active {
+  content: url("../media/lightning-active.png");
+}
+
+/* Defina a imagem inativa usando o atributo data-active */
+.lightning-button.inactive {
+  content: url("../media/lightning-inactive.png");
 }
