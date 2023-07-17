@@ -20,6 +20,7 @@
   border-radius: 17px 17px 17px 17px;
   left: 117px;
   top: 128px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.295);
 }
 
 .metric-container {
