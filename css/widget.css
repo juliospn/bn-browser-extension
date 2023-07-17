@@ -62,16 +62,14 @@
   cursor: pointer;
   position: absolute;
   padding: 0;
+  margin-left: 2.5px;
 }
 
 .arrow-button img {
   height: 32px;
   transition: all 0.2s;
-}
-
-.arrow-button svg {
-  background-color: transparent;
-  transition: all 0.2s;
+  padding-top: 2.49px;
+  border-radius: 100px;
 }
 
 .nupl {
@@ -81,12 +79,6 @@
 .unit {
   font-size: 70%;
   /* Tamanho de fonte menor para a unidade "days" */
-}
-
-.arrow-button img {
-  padding-top: 2.49px;
-  margin-left: 2.5px;
-  border-radius: 100px;
 }
 
 .image-inactive {
