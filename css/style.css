@@ -80,10 +80,6 @@ body {
     margin: 0 auto;
 }
 
-.subscribe-text {
-    color: red;
-}
-
 .mailingList {
     background: #ff161600;
     color: #000000;
@@ -241,7 +237,7 @@ h1 {
 
 /* Estilo para o thumb (ponteiro) da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-    background: #ff1616;
+    background: #f7f7f7;
     /* Cor do thumb */
     border-left: solid 0.5px rgb(228, 228, 228);
     border-right: solid 2px rgb(180, 180, 180);
