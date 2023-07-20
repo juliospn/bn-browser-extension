@@ -2,26 +2,23 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly;
-  margin: 23px 9px 13px 10px;
-  padding: 19px 14px 16px 14px;
+  margin: 0px 18px 0px 18px;
+  padding: 19px 0px 16px 0px;
   border-radius: 5px;
   text-align: left;
-  border: solid 1px rgba(207, 207, 207, 0.822);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
+  justify-content: center;
 }
 
 .button-container {
   position: absolute;
   background-color: #5c5c5c;
-  width: 105.5px;
+  width: 104.3px;
   height: 36.3px;
   /* border: solid 1px rgba(207, 207, 207, 0.822); */
   border-radius: 17px 17px 17px 17px;
-  left: 17px;
-  top: 58px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.295);
-  scale: 0.9;
+  left: 239px;
+  top: 25px;
+  scale: 0.8;
 }
 
 .metric-container {
@@ -36,24 +33,30 @@
 }
 
 .metric-title {
+  font-family: "ITC Avant Garde Gothic";
+  font-style: normal;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #737373;
 }
 
 .metric-value {
-  margin-top: 8px;
+  margin-top: 12px;
   max-width: 150px;
   background-color: rgb(255, 255, 255);
   color: black;
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.4px;
+
 }
 
 .verticalLine {
   border-left: 1px solid #636d7c;
-  height: 40px;
-  padding-right: 8px !important;
-  margin-left: 8px;
+  height: 50px;
+  padding-right: 10px !important;
+  margin-left: 10px;
 }
 
 .arrow-button {
@@ -63,13 +66,13 @@
   cursor: pointer;
   position: absolute;
   padding: 0;
-  margin-left: 2.5px;
+  margin-left: 1.4px;
 }
 
 .arrow-button img {
-  height: 32px;
+  height: 34px;
   transition: all 0.2s;
-  padding-top: 2.49px;
+  padding-top: 1.2px;
   border-radius: 100px;
 }
 

@@ -35,14 +35,13 @@ function getPriceChange() {
       let priceChange24Value = document.getElementById("price-change-24-value");
 
       if (!isNaN(changePercent24Hr)) {
+        priceChange24Value.textContent = `${changePercent24Hr.toFixed(2)}%`;
+        
         if (changePercent24Hr > 0) {
-          priceChange24Value.innerHTML = `<span class="arrow">&#8593;</span> ${changePercent24Hr.toFixed(2)}<span class="unit">%</span>`;
           priceChange24Value.style.color = "green";
         } else if (changePercent24Hr < 0) {
-          priceChange24Value.innerHTML = `<span class="arrow">&#8595;</span> ${changePercent24Hr.toFixed(2)}<span class="unit">%</span>`;
-          priceChange24Value.style.color = "#ff3554"; // Vermelho escuro
+          priceChange24Value.style.color = "black"; // Vermelho escuro
         } else {
-          priceChange24Value.textContent = `${changePercent24Hr.toFixed(2)}%`;
           priceChange24Value.style.color = "inherit";
         }
       } else {
@@ -116,11 +115,11 @@ function getWeekPriceChange() {
 
         if (!isNaN(priceChange7d)) {
           if (priceChange7d > 0) {
-            priceChange7dValue.innerHTML = `<span class="arrow">&#8593;</span> ${priceChange7d.toFixed(2)}<span class="unit">%</span>`;
+            priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
             priceChange7dValue.style.color = "green";
           } else if (priceChange7d < 0) {
-            priceChange7dValue.innerHTML = `<span class="arrow">&#8595;</span> ${priceChange7d.toFixed(2)}<span class="unit">%</span>`;
-            priceChange7dValue.style.color = "red";
+            priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
+            priceChange7dValue.style.color = "black";
           } else {
             priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
             priceChange7dValue.style.color = "inherit";
@@ -141,6 +140,7 @@ function getWeekPriceChange() {
 }
 
 getWeekPriceChange();
+
 
 
 /* ========= BTC DOM ========= */
