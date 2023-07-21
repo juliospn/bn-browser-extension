@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "BitcoinNews",
   "version": "1.1.0",
-  "description": "This is a browser extension that allows users to monitor and access the latest news from BitcoinNews, along with some Bitcoin metrics.",
+  "description": "Get the best and latest news from Bitcoin News, along with some important Bitcoin metrics.",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",

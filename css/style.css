@@ -2,7 +2,7 @@
     font-style: normal;
     font-weight: bold;
     line-height: 1.2;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 body {
@@ -70,24 +70,28 @@ body {
 
 /* News page =================================== */
 .subscribe-button {
-    margin: 0 0 16px;
+    margin: 0 0 23px;
     transition: 0.5s all;
+    background-color: #b8b8b8;
+    color: #ffffff;
+    padding-top: 2px;
 }
 
 .subscribe-button a {
     text-decoration: none;
     margin: 0 auto;
+    color: #ffffff;
+
 }
 
 .subscribe-text {
-    color: #FF7F09;
-    text-decoration: underline;
+    color: #ffffff;
     font-weight: 600;
 }
 
 .mailingList {
     background: #ff161600;
-    color: #000000;
+    color: #ffffff;
     font-size: 17px;
     vertical-align: middle;
     text-align: center;
@@ -124,7 +128,6 @@ body {
 }
 
 .single-post img {
-    border: 1px solid #636d7c;
     border-radius: 2px;
     height: 78px;
     margin: auto;
@@ -211,7 +214,7 @@ h1 {
 .mail-img {
     padding-bottom: 3px;
     margin-left: 7px;
-    width: 25px;
+    width: 27px;
     transition: transform 0.3s;
 }
 
