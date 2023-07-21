@@ -39,7 +39,7 @@ body {
 
 .header img {
     width: 125px;
-    padding-top: 20px;
+    padding-top: 28px;
     scale: 0.8;
     margin-left: 18px;
 }
@@ -72,27 +72,25 @@ body {
 .subscribe-button {
     margin: 0 0 23px;
     transition: 0.5s all;
-    background-color: #b8b8b8;
-    color: #ffffff;
     padding-top: 2px;
 }
 
 .subscribe-button a {
     text-decoration: none;
     margin: 0 auto;
-    color: #ffffff;
+    color:black;
 
 }
 
 .subscribe-text {
-    color: #ffffff;
+    color:black;
     font-weight: 600;
+
 }
 
 .mailingList {
-    background: #ff161600;
-    color: #ffffff;
-    font-size: 17px;
+    color: black;
+    font-size: 14px;
     vertical-align: middle;
     text-align: center;
     display: flex;
@@ -100,7 +98,11 @@ body {
     align-items: center;
     padding: 10px 8px;
     transition: all 1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra embaixo */
+    border-top: 1px solid rgba(167, 167, 167, 0.2); /* Adiciona uma linha fraquinha em cima */
+    letter-spacing: 0.7px;
 }
+
 
 .mailingList a {
     display: block;
@@ -172,7 +174,7 @@ body {
 .loadMore {
     text-align: right;
     margin-right: 40px;
-    padding: 0 0 25px;
+    padding: 0 0 20px;
 }
 
 .loadMore button:hover {
@@ -249,3 +251,4 @@ h1 {
     border-bottom: solid 2px rgba(180, 180, 180, 0.863);
     border-top: solid 2px rgba(180, 180, 180, 0.863);
 }
+

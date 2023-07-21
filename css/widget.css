@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   margin: 0px 18px 0px 18px;
-  padding: 13px 0px 20px 0px;
+  padding: 20px 0px 20px 0px;
   border-radius: 5px;
   text-align: left;
   justify-content: center;
@@ -11,14 +11,14 @@
 
 .button-container {
   position: absolute;
-  background-color: #5c5c5c;
+  background-color: #989898;
   width: 104.3px;
   height: 36.3px;
   /* border: solid 1px rgba(207, 207, 207, 0.822); */
   border-radius: 17px 17px 17px 17px;
   left: 239px;
   top: 25px;
-  scale: 0.8;
+  scale: 0.9;
 }
 
 .metric-container {
