@@ -96,13 +96,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 8px;
+    padding: 10px 8px 9px;
     transition: all 1s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra embaixo */
     border-top: 1px solid rgba(167, 167, 167, 0.2); /* Adiciona uma linha fraquinha em cima */
     letter-spacing: 0.7px;
 }
-
 
 .mailingList a {
     display: block;
@@ -115,10 +114,6 @@ body {
 .mailingList .subscribeList {
     padding-top: 3px;
     float: right;
-}
-
-.mailingList svg {
-    padding-right: 3px;
 }
 
 .single-post {
@@ -214,9 +209,9 @@ h1 {
 }
 
 .mail-img {
-    padding-bottom: 3px;
+    margin-bottom: 2px;
     margin-left: 7px;
-    width: 27px;
+    width: 21px;
     transition: transform 0.3s;
 }
 

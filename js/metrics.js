@@ -22,36 +22,7 @@ function formatPrice(price) {
   return '$ ' + formatted;
 }
 
-/* ========= 24hr Price Change ========= */
-function getPriceChange() {
-  var url = "https://api.coincap.io/v2/assets/bitcoin";
 
-  fetch(url)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      let changePercent24Hr = parseFloat(data.data.changePercent24Hr);
-      let priceChange24Value = document.getElementById("price-change-24-value");
-
-      if (!isNaN(changePercent24Hr)) {
-        priceChange24Value.textContent = `${changePercent24Hr.toFixed(2)}%`;
-        
-        if (changePercent24Hr > 0) {
-          priceChange24Value.style.color = "green";
-        } else if (changePercent24Hr < 0) {
-          priceChange24Value.style.color = "black"; // Vermelho escuro
-        } else {
-          priceChange24Value.style.color = "inherit";
-        }
-      } else {
-        priceChange24Value.textContent = "N/A";
-        priceChange24Value.style.display = "block";
-      }
-    });
-}
-
-getPriceChange();
 
 
 function formatNetworkCapacity(networkCapacity) {
@@ -100,6 +71,38 @@ function getLightningMetrics() {
 getLightningMetrics();
 
 
+/* ========= 24hr Price Change ========= */
+function getPriceChange() {
+  var url = "https://api.coincap.io/v2/assets/bitcoin";
+
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      let changePercent24Hr = parseFloat(data.data.changePercent24Hr);
+      let priceChange24Value = document.getElementById("price-change-24-value");
+
+      if (!isNaN(changePercent24Hr)) {
+        priceChange24Value.innerHTML = `<span class="value">${changePercent24Hr.toFixed(2)}</span><span class="unit"> %</span>`;
+
+        if (changePercent24Hr > 0) {
+          priceChange24Value.style.color = "green";
+        } else if (changePercent24Hr < 0) {
+          priceChange24Value.style.color = "black"; // Vermelho escuro
+        } else {
+          priceChange24Value.style.color = "inherit";
+        }
+      } else {
+        priceChange24Value.textContent = "N/A";
+        priceChange24Value.style.display = "block";
+      }
+    });
+}
+
+getPriceChange();
+
+
 /* ========= Week Price Change ========= */
 function getWeekPriceChange() {
   var url = "https://api.coinranking.com/v2/coin/Qwsogvtv82FCd?timePeriod=7d";
@@ -115,13 +118,13 @@ function getWeekPriceChange() {
 
         if (!isNaN(priceChange7d)) {
           if (priceChange7d > 0) {
-            priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
+            priceChange7dValue.innerHTML = `<span class="value">${priceChange7d.toFixed(2)}</span><span class="unit"> %</span>`;
             priceChange7dValue.style.color = "green";
           } else if (priceChange7d < 0) {
-            priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
+            priceChange7dValue.innerHTML = `<span class="value">${priceChange7d.toFixed(2)}</span><span class="unit"> %</span>`;
             priceChange7dValue.style.color = "black";
           } else {
-            priceChange7dValue.textContent = `${priceChange7d.toFixed(2)}%`;
+            priceChange7dValue.innerHTML = `<span class="value">${priceChange7d.toFixed(2)}</span><span class="unit"> %</span>`;
             priceChange7dValue.style.color = "inherit";
           }
 
@@ -140,7 +143,6 @@ function getWeekPriceChange() {
 }
 
 getWeekPriceChange();
-
 
 
 /* ========= BTC DOM ========= */
