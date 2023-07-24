@@ -1,19 +1,21 @@
+// This script fetches news data from an API, extracts relevant information, and displays it on the page.
+
 document.addEventListener('DOMContentLoaded', function () {
   var feedContent = document.getElementById('feed-content');
-  var newsCounter = 3; // Inicialmente, três notícias já estão sendo exibidas
-  var extractedItems; // Declaração da variável no escopo global
+  var newsCounter = 3; // Initially, three news items are displayed
+  var extractedItems; // Declaration of a variable in the global scope
 
-  // Fazer a solicitação HTTP
+  // Making an HTTP request
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://server-proxy-bitcoinnews-juliospn.vercel.app/feed', true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var response = JSON.parse(xhr.responseText);
 
-      // Obter todas as notícias do array "item" (considerando que o array esteja em ordem decrescente de data)
+      // Get all news items from the "item" array (assuming the array is in descending order of date)
       var allItems = response.rss.channel.item;
 
-      // Mapear os itens para extrair as informações desejadas
+      // Map the items to extract desired information
       extractedItems = allItems.map(function (item) {
         return {
           title: item.title._text,
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
       });
 
-      // Construir o HTML dos posts
+      // Build the HTML for the posts
       var html = '<div class="posts">';
       extractedItems.slice(0, newsCounter).forEach(function (item) {
         html += '<div class="single-post">';
@@ -38,10 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       html += '</div>';
 
-      // Exibir o conteúdo na div
+      // Display the content in the div
       feedContent.innerHTML = html;
 
-      // Verificar se há mais notícias disponíveis
+      // Check if there are more news items available
       if (newsCounter < extractedItems.length) {
         document.querySelector('.loadMore button').style.display = 'inline';
       } else {
@@ -52,13 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   xhr.send();
 
-  // Função para calcular a diferença de tempo
+  // Function to calculate time difference
   function getTimeDifference(pubDate) {
     var currentDate = new Date();
     var postDate = new Date(pubDate);
     var timeDifference = Math.abs(currentDate - postDate);
-    var hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60)); // Alterado para floor em vez de round
-  
+    var hoursDifference = Math.floor(timeDifference / (1000 * 60 * 60)); // Changed to floor instead of round
+
     if (hoursDifference >= 24) {
       var daysDifference = Math.floor(hoursDifference / 24);
       var remainingHours = hoursDifference % 24;
@@ -67,20 +69,19 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         return daysDifference + 'd ago';
       }
-    } else if (hoursDifference >= 1) { // Verifica se a diferença é maior ou igual a 1 hora
+    } else if (hoursDifference >= 1) { // Check if the difference is greater than or equal to 1 hour
       return hoursDifference + ' hours';
     } else {
-      var minutesDifference = Math.floor(timeDifference / (1000 * 60)); // Calcula a diferença em minutos
+      var minutesDifference = Math.floor(timeDifference / (1000 * 60)); // Calculate difference in minutes
       return minutesDifference + ' minutes';
     }
   }
-  
 
-
+  // Load more button event listener
   document.querySelector('.loadMore button').addEventListener('click', function () {
-    newsCounter += 3; // Aumenta o contador em 3 para exibir mais notícias
+    newsCounter += 3; // Increase the counter by 3 to display more news
 
-    // Construir o HTML dos posts com as notícias adicionais
+    // Build the HTML for the posts with the additional news
     var html = '<div class="posts">';
     extractedItems.slice(0, newsCounter).forEach(function (item) {
       html += '<div class="single-post">';
@@ -93,10 +94,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     html += '</div>';
 
-    // Exibir o conteúdo atualizado na div
+    // Display the updated content in the div
     feedContent.innerHTML = html;
 
-    // Verificar se há mais notícias disponíveis
+    // Check if there are more news items available
     if (newsCounter >= extractedItems.length) {
       document.querySelector('.loadMore button').style.display = 'none';
     }

@@ -1,3 +1,4 @@
+/* Styles for the container that holds flex items */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -9,18 +10,20 @@
   justify-content: center;
 }
 
+/* Styles for the container that holds buttons */
 .button-container {
   position: absolute;
   background-color: #7a7a7a;
   width: 104.3px;
   height: 36.3px;
-  /* border: solid 1px rgba(207, 207, 207, 0.822); */
-  border-radius: 17px 17px 17px 17px;
+  border-radius: 17px;
+  /* The same radius on all sides to create a rounded rectangle */
   left: 239px;
   top: 25px;
   scale: 0.85;
 }
 
+/* Styles for the container that holds metrics */
 .metric-container {
   border-radius: 10px;
   background-color: #fdfdfd;
@@ -32,6 +35,7 @@
   width: 83px;
 }
 
+/* Styles for the title of a metric */
 .metric-title {
   font-family: "ITC Avant Garde Gothic";
   font-style: normal;
@@ -41,6 +45,7 @@
   color: #737373;
 }
 
+/* Styles for the value of a metric */
 .metric-value {
   margin-top: 12px;
   max-width: 150px;
@@ -49,9 +54,9 @@
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.4px;
-
 }
 
+/* Styles for the vertical line */
 .verticalLine {
   border-left: 1px solid #636d7c;
   height: 50px;
@@ -59,6 +64,7 @@
   margin-left: 10px;
 }
 
+/* Styles for the arrow button */
 .arrow-button {
   background-color: rgba(255, 5, 5, 0);
   color: rgb(255, 255, 255);
@@ -69,6 +75,7 @@
   margin-left: 1.4px;
 }
 
+/* Styles for the arrow button image */
 .arrow-button img {
   height: 34px;
   transition: all 0.2s;
@@ -76,45 +83,44 @@
   border-radius: 100px;
 }
 
+/* Styles for the NUPL container */
 .nupl {
   flex-direction: column;
 }
 
+/* Styles for the unit (font size reduced for "days" unit) */
 .unit {
   font-size: 70%;
-  /* Tamanho de fonte menor para a unidade "days" */
 }
 
+/* Styles for the image in the inactive state */
 .image-inactive {
   border-radius: 100px;
 }
 
-/* Defina a imagem ativa usando o atributo data-inactive */
+/* Styles for the active and inactive states of the BTC button */
 .btc-button.active {
   content: url("../media/btc-active.png");
 }
 
-/* Defina a imagem inativa usando o atributo data-active */
 .btc-button.inactive {
   content: url("../media/btc-inactive.png");
 }
 
-/* Defina a imagem ativa usando o atributo data-inactive */
+/* Styles for the active and inactive states of the Market button */
 .market-button.active {
   content: url("../media/arrow-active.png");
 }
 
-/* Defina a imagem inativa usando o atributo data-active */
 .market-button.inactive {
   content: url("../media/arrow-inactive.png");
 }
 
-/* Defina a imagem ativa usando o atributo data-inactive */
+/* Styles for the active and inactive states of the Lightning button */
 .lightning-button.active {
   content: url("../media/lightning-active.png");
 }
 
-/* Defina a imagem inativa usando o atributo data-active */
 .lightning-button.inactive {
   content: url("../media/lightning-inactive.png");
 }

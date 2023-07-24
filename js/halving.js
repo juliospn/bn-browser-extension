@@ -1,3 +1,5 @@
+// This script calculates and displays the time remaining until the next Bitcoin halving event.
+
 function startClock(height) {
   const blockTime = 9.65;
   const halvingBlockHeight = 840000;
@@ -14,12 +16,15 @@ function startClock(height) {
   }
   halvingTimeText += remainingDays + " <span class=\"unit\">Days</span>";
 
+  // Display the time remaining until halving on the page
   document.getElementById('halving-time').innerHTML = halvingTimeText;
 }
 
+// jQuery ready event to fetch the latest block height from an external API
 jQuery(document).ready(function ($) {
   $.get("https://www.satochi.co/latest-block")
     .done((height) => {
+      // Start the countdown clock based on the retrieved block height
       startClock(height);
     })
     .fail(() => {

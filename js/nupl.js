@@ -1,28 +1,28 @@
-// Seleciona o elemento onde o NUPL será exibido
+// Select the element where NUPL will be displayed
 const nuplValue = document.getElementById("nupl-value");
 
-// URL da API para obter as informações de mercado do Bitcoin
+// API URL to fetch Bitcoin market information
 const url = "https://data.messari.io/api/v1/assets/bitcoin/metrics";
 
-// Requisita os dados da API
+// Request data from the API
 fetch(url)
   .then(response => response.json())
   .then(data => {
-    // Extrai o valor de market cap e realized cap
+    // Extract market cap and realized cap from the API response
     const marketCap = data.data.marketcap.current_marketcap_usd;
     const realizedCap = data.data.marketcap.realized_marketcap_usd;
 
-    // Calcula o NUPL
+    // Calculate the NUPL (Net Unrealized Profit/Loss)
     const nupl = (marketCap - realizedCap) / marketCap;
 
-    
-    // Insere o valor de NUPL na div
+    // Insert the calculated NUPL value into the div
     nuplValue.innerHTML = nupl.toFixed(3);
-    // Aplica a cor definida ao elemento que exibe o NUPL
+
+    // Apply the defined color to the element displaying the NUPL
 
   })
   .catch(error => {
-    // Caso ocorra algum erro, exibe uma mensagem
+    // If an error occurs, display a message and set NUPL value to "--"
     console.error(error);
     nuplValue.innerHTML = "--";
   });

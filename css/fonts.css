@@ -1,68 +1,71 @@
 /* Bold */
 @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: normal;
-    font-weight: bold;
-    src: url("../fonts/itc-avant-garde-gothic_bold.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_bold.woff") format("woff");
-  }
-  
-  @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: italic;
-    font-weight: bold;
-    src: url("../fonts/itc-avant-garde-gothic_bold-oblique.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_bold-oblique.woff") format("woff");
-  }
-  
-  /* Book */
-  @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/itc-avant-garde-gothic_book.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_book.woff") format("woff");
-  }
-  
-  @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: italic;
-    font-weight: normal;
-    src: url("../fonts/itc-avant-garde-gothic_book-oblique.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_book-oblique.woff") format("woff");
-  }
-  
-  /* Demi-Bold */
-  @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: normal;
-    font-weight: 600; /* Usar 600 para demi-bold */
-    src: url("../fonts/itc-avant-garde-gothic_demi-bold.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_demi-bold.woff") format("woff");
-  }
-  
-  @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: italic;
-    font-weight: 600; /* Usar 600 para demi-bold */
-    src: url("../fonts/itc-avant-garde-gothic_demi-bold-oblique.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_demi-bold-oblique.woff") format("woff");
-  }
-  
-  /* Extra-Light */
-  @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: normal;
-    font-weight: 200; /* Usar 200 para extra-light */
-    src: url("../fonts/itc-avant-garde-gothic_extra-light.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_extra-light.woff") format("woff");
-  }
-  
-  @font-face {
-    font-family: "ITC Avant Garde Gothic";
-    font-style: italic;
-    font-weight: 200; /* Usar 200 para extra-light */
-    src: url("../fonts/itc-avant-garde-gothic_extra-light-oblique.woff2") format("woff2"),
-         url("../fonts/itc-avant-garde-gothic_extra-light-oblique.woff") format("woff");
-  }
-  
+     font-family: "ITC Avant Garde Gothic";
+     font-style: normal;
+     font-weight: bold;
+     src: url("../fonts/itc-avant-garde-gothic_bold.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_bold.woff") format("woff");
+}
+
+@font-face {
+     font-family: "ITC Avant Garde Gothic";
+     font-style: italic;
+     font-weight: bold;
+     src: url("../fonts/itc-avant-garde-gothic_bold-oblique.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_bold-oblique.woff") format("woff");
+}
+
+/* Book */
+@font-face {
+     font-family: "ITC Avant Garde Gothic";
+     font-style: normal;
+     font-weight: normal;
+     src: url("../fonts/itc-avant-garde-gothic_book.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_book.woff") format("woff");
+}
+
+@font-face {
+     font-family: "ITC Avant Garde Gothic";
+     font-style: italic;
+     font-weight: normal;
+     src: url("../fonts/itc-avant-garde-gothic_book-oblique.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_book-oblique.woff") format("woff");
+}
+
+/* Demi-Bold */
+@font-face {
+     font-family: "ITC Avant Garde Gothic";
+     font-style: normal;
+     font-weight: 600;
+     /* Use 600 for demi-bold */
+     src: url("../fonts/itc-avant-garde-gothic_demi-bold.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_demi-bold.woff") format("woff");
+}
+
+@font-face {
+     font-family: "ITC Avant Garde Gothic";
+     font-style: italic;
+     font-weight: 600;
+     /* Use 600 for demi-bold */
+     src: url("../fonts/itc-avant-garde-gothic_demi-bold-oblique.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_demi-bold-oblique.woff") format("woff");
+}
+
+/* Extra-Light */
+@font-face {
+     font-family: "ITC Avant Garde Gothic";
+     font-style: normal;
+     font-weight: 200;
+     /* Use 200 for extra-light */
+     src: url("../fonts/itc-avant-garde-gothic_extra-light.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_extra-light.woff") format("woff");
+}
+
+@font-face {
+     font-family: "ITC Avant Garde Gothic";
+     font-style: italic;
+     font-weight: 200;
+     /* Use 200 for extra-light */
+     src: url("../fonts/itc-avant-garde-gothic_extra-light-oblique.woff2") format("woff2"),
+          url("../fonts/itc-avant-garde-gothic_extra-light-oblique.woff") format("woff");
+}
