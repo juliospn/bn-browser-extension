@@ -189,12 +189,15 @@ body {
   position: relative;
 }
 
+.posts-title h2 a {
+  font-weight: 600;
+  transition: all 1s;
+}
+
 /* Hover effect for links within post titles */
 .posts-title h2 a:hover {
-  font-weight: 700;  
-  transition: all 0.2s;
-  color: #6b6b6b;
-
+  font-weight: 700;
+  /* color: #4e4e4e; */
 }
 
 /* Styles for the "Load More" button */
