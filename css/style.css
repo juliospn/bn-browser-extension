@@ -191,12 +191,12 @@ body {
 
 .posts-title h2 a {
   font-weight: 600;
-  transition: all 1s;
+  transition: all 0.3s;
 }
 
 /* Hover effect for links within post titles */
 .posts-title h2 a:hover {
-  font-weight: 700;
+  font-weight: 800;
   /* color: #4e4e4e; */
 }
 
