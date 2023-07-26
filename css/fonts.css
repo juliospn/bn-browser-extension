@@ -69,3 +69,5 @@
      src: url("../fonts/itc-avant-garde-gothic_extra-light-oblique.woff2") format("woff2"),
           url("../fonts/itc-avant-garde-gothic_extra-light-oblique.woff") format("woff");
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500;600&display=swap');
