@@ -91,6 +91,7 @@ body {
   text-decoration: none;
   margin: 0 auto;
   color: black;
+  font-weight: 300;
 }
 
 /* Styles for the subscribe text */
@@ -103,7 +104,7 @@ body {
 /* Styles for the subscribe text */
 .mailingList:hover .subscribe-text:hover {
   color: rgb(255, 255, 255);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Styles for the mailing list container */
@@ -192,12 +193,13 @@ body {
 .posts-title h2 a {
   font-weight: 700;
   transition: all 0.3s;
+  color: #414141;
 }
 
-/* Hover effect for links within post titles 
+/* Hover effect for links within post titles */
 .posts-title h2 a:hover {
-  color: #4e4e4e;
-} */
+  color: #000000;
+} 
 
 /* Styles for the "Load More" button */
 .loadMore {
@@ -211,15 +213,16 @@ body {
   background-color: transparent;
   color: #414141;
   cursor: pointer;
-  font-weight: 500;
   padding: 10px 25px;
   font-size: 14px;
   transition: all 0.2s;
   border: 1px solid black;
+  font-weight: 300;
 }
 
-.loadMore button:hover {
+.loadMore p:hover {
   color: #000;
+
 }
 
 /* Styles for the h1 element */
