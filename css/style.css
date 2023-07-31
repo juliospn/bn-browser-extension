@@ -193,12 +193,13 @@ body {
 .posts-title h2 a {
   font-weight: 700;
   transition: all 0.3s;
-  color: #414141;
+  color: #000000;
 }
 
 /* Hover effect for links within post titles */
 .posts-title h2 a:hover {
   color: #000000;
+  text-decoration: underline;
 } 
 
 /* Styles for the "Load More" button */
@@ -217,12 +218,19 @@ body {
   font-size: 14px;
   transition: all 0.2s;
   border: 1px solid black;
-  font-weight: 300;
+  font-family: "Open Sans";
+}
+
+.loadMore p {
+  font-weight: 400;
+  font-family: "Open Sans";
+
 }
 
 .loadMore p:hover {
   color: #000;
-
+  font-weight: 500;
+  font-family: 'Open Sans';
 }
 
 /* Styles for the h1 element */
