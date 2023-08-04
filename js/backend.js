@@ -15,17 +15,25 @@ document.addEventListener('DOMContentLoaded', function () {
       // Get all news items from the "item" array (assuming the array is in descending order of date)
       var allItems = response.rss.channel.item;
 
-      // Map the items to extract desired information
-      extractedItems = allItems.map(function (item) {
-        return {
-          title: item.title._text,
-          link: item.link._text,
-          pubDate: item.pubDate._text,
-          creator: item["dc:creator"]._cdata,
-          description: item.description._cdata,
-          thumbnail: item["content:encoded"]._cdata.match(/src="([^"]+)"/)[1].replace(".jpg", "-300x169.jpg")
-        };
-      });
+    // Map the items to extract desired information
+extractedItems = allItems.map(function (item) {
+  // ...
+  // Corretamente obter a URL da imagem em miniatura
+  var thumbnailMatch = item["content:encoded"]._cdata.match(/src="([^"]+)"/);
+  var thumbnail = thumbnailMatch ? thumbnailMatch[1] : '';
+
+  // Verificar e substituir o sufixo de tamanho da imagem (se necessário)
+  thumbnail = thumbnail.replace(/-300x\d+\.jpg$/, '-300x200.jpg');
+
+  return {
+    title: item.title._text,
+    link: item.link._text,
+    pubDate: item.pubDate._text,
+    creator: item["dc:creator"]._cdata,
+    description: item.description._cdata,
+    thumbnail: thumbnail
+  };
+});
 
       // Build the HTML for the posts
       var html = '<div class="posts">';
