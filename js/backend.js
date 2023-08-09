@@ -3,37 +3,56 @@
 document.addEventListener('DOMContentLoaded', function () {
   var feedContent = document.getElementById('feed-content');
   var newsCounter = 3; // Initially, three news items are displayed
-  var extractedItems; // Declaration of a variable in the global scope
 
   // Making an HTTP request
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://server-proxy-bitcoinnews-juliospn.vercel.app/feed', true);
-  xhr.onreadystatechange = function () {
+  xhr.onreadystatechange = async function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var response = JSON.parse(xhr.responseText);
 
       // Get all news items from the "item" array (assuming the array is in descending order of date)
       var allItems = response.rss.channel.item;
 
-    // Map the items to extract desired information
-extractedItems = allItems.map(function (item) {
-  // ...
-  // Corretamente obter a URL da imagem em miniatura
-  var thumbnailMatch = item["content:encoded"]._cdata.match(/src="([^"]+)"/);
-  var thumbnail = thumbnailMatch ? thumbnailMatch[1] : '';
+      // Function to check if an image exists
+      async function checkImageExistence(url) {
+        return new Promise((resolve, reject) => {
+          var img = new Image();
+          img.src = url;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      }
 
-  // Verificar e substituir o sufixo de tamanho da imagem (se necessário)
-  thumbnail = thumbnail.replace(/-300x\d+\.jpg$/, '-300x200.jpg');
+      // Map the items to extract desired information
+      extractedItems = await Promise.all(allItems.map(async function (item) {
+        // ...
+        // Corretamente obter a URL da imagem em miniatura
+        var thumbnailMatch = item["content:encoded"]._cdata.match(/src="([^"]+)"/);
+        var thumbnail = thumbnailMatch ? thumbnailMatch[1] : '';
 
-  return {
-    title: item.title._text,
-    link: item.link._text,
-    pubDate: item.pubDate._text,
-    creator: item["dc:creator"]._cdata,
-    description: item.description._cdata,
-    thumbnail: thumbnail
-  };
-});
+        // Verificar se a imagem com o sufixo -300x169.jpg existe
+        var thumbnailSize = '-300x169.jpg';
+        var selectedThumbnail = thumbnail.replace(/\.[^.]+$/, thumbnailSize);
+
+        // Verificar se a imagem existe, senão usar a thumbnail com .jpg
+        try {
+          await checkImageExistence(selectedThumbnail);
+        } catch {
+          // Imagem não encontrada, usar a thumbnail com .jpg
+          console.log('Image "-300x169.jpg" not found, so we used this:', thumbnail);
+          selectedThumbnail = thumbnail.replace(/\.[^.]+$/, '.jpg');
+        }
+
+        return {
+          title: item.title._text,
+          link: item.link._text,
+          pubDate: item.pubDate._text,
+          creator: item["dc:creator"]._cdata,
+          description: item.description._cdata,
+          thumbnail: selectedThumbnail
+        };
+      }));
 
       // Build the HTML for the posts
       var html = '<div class="posts">';
